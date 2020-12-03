@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- You don't need to include android:required="false" if your app's
+     minSdkVersion is 28 or higher. -->
+        <uses-library android:name="android.test.runner"/>
+
     </application>
 
 </manifest>
