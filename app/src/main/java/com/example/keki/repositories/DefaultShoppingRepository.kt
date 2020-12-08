@@ -3,13 +3,14 @@ package com.example.keki.repositories
 import androidx.lifecycle.LiveData
 import com.example.keki.data.local.ShoppingDao
 import com.example.keki.data.local.ShoppingItem
+import com.example.keki.data.remote.PixabayAPI
 import com.example.keki.data.remote.responses.ImageResponse
 import com.example.keki.other.Resource
 import javax.inject.Inject
 
 class DefaultShoppingRepository @Inject constructor(
         private val shoppingDao: ShoppingDao,
-        private val pixabayAPI: com.example.keki.data.remote.responses.PixabayAPI
+        private val pixabayAPI:com.example.keki.data.remote.responses.PixabayAPI
 ):ShoppingRepository{
     override suspend fun insertShoppingItem(shoppingItem: ShoppingItem) {
         shoppingDao.insertShoppingItem(shoppingItem)

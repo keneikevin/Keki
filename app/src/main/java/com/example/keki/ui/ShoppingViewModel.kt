@@ -1,5 +1,6 @@
 package com.example.keki.ui
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +14,7 @@ import com.example.keki.repositories.ShoppingRepository
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class ShoppingViewModel (
+class ShoppingViewModel @ViewModelInject constructor(
         private val repository: ShoppingRepository
         ):ViewModel() {
         val shoppingItems = repository.observeAllShoppingItems()
